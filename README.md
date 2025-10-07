@@ -32,3 +32,8 @@ Dies ist die offizielle Website von **SKILI** (Kilian Seibl), einem Producer & D
 ---
 
 ## 📂 Projektstruktur
+├─ index.html # Hauptseite
+├─ style.css # Optional, falls ausgelagert
+├─ assets/ # Bilder, Icons, etc.
+└─ README.md # Diese Datei
+
