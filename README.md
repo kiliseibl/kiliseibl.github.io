@@ -24,4 +24,11 @@ Dies ist die offizielle Website von **SKILI** (Kilian Seibl), einem Producer & D
 ## 🛠️ Technologie
 - **HTML5 & CSS3** für Layout und Styling
 - **JavaScript** für interaktive Elemente:
-  - Hintergrundbewegung im Hero-
+  - Hintergrundbewegung im Hero-Bereich
+  - Scroll Reveal Animationen
+  - Öffnen externer Links
+- **Spotify & Instagram Embeds** für Musik- und Social-Media-Integration
+
+---
+
+## 📂 Projektstruktur
