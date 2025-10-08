@@ -1,0 +1,134 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root{--accent:#ff4d6d;--glass:rgba(255,255,255,0.06)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e8eef6;overflow-x:hidden;}
+
+/* Hintergrundbild mit Overlay */
+body {
+  background: url("images/BG.png") center center / cover no-repeat fixed;
+  position: relative;
+}
+
+/* NAV */
+header{position:fixed;inset:16px 24px auto 24px;z-index:60;display:flex;gap:18px;align-items:center}
+.logo{font-weight:800;letter-spacing:2px;font-size:20px;color:var(--accent);text-transform:uppercase}
+nav{backdrop-filter: blur(6px);background:var(--glass);padding:8px 12px;border-radius:14px;display:flex;gap:10px}
+nav a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px;transition:transform .25s, background .25s}
+nav a:hover{transform:translateY(-4px);background:rgba(255,255,255,0.03)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 20px 60px}
+.hero-inner{max-width:1100px;width:100%;display:flex;flex-direction: column;align-items: center; justify-content: center;text-align: center;gap:24px;min-height: 100vh;}
+h1 {
+  font-size: 120px;              /* deutlich größer */
+  margin: 0;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -2px;
+  text-align: center;           /* zentriert den Text */
+
+
+
+}
+.hero-image img {
+  width: 100%;
+  height: auto;       /* Höhe passt sich proportional an */
+  object-fit: cover;  /* Bild füllt die Box gut aus */
+  display: block;
+}
+
+
+
+p.lead{margin:0 0 22px;font-size:18px;opacity:.85}
+.cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;   /* zentriert die Buttons horizontal */
+  align-items: center;       /* sorgt für gleiche vertikale Ausrichtung */
+  margin-top: 20px;          /* optional etwas Abstand nach oben */
+}
+
+.btn{padding:12px 18px;border-radius:12px;border:0;background:linear-gradient(90deg,var(--accent),#ff7a3d);color:#081018;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(255,77,109,.12);transition:transform .24s}
+.btn.secondary{background:transparent;color:#e6eefc;border:1px solid rgba(255,255,255,0.06)}
+.btn:active{transform:translateY(2px)}
+
+/* CARD */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:18px;box-shadow:0 10px 30px rgba(1,4,6,.6);backdrop-filter:blur(6px)}
+.profile{display:flex;gap:14px;align-items:center}
+.avatar{width:86px;height:86px;border-radius:14px;overflow:hidden;flex-shrink:0}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.meta h3{margin:0;font-size:20px}
+.meta p{margin:6px 0 0;font-size:13px;color:rgba(255,255,255,0.7)}
+
+/* SECTIONS */
+section{padding:30px 18px}
+.section-title{max-width:1100px;margin:0 auto 26px;font-size:24px}
+.about-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:28px}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.ig-embed{aspect-ratio:4/5;background:#0b0b0f;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ig-embed iframe{width:100%;height:100%;border:0}
+
+/* PLAYLIST */
+.tracks{display:flex;flex-direction:column;gap:10px}
+.track{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);transition:transform .25s}
+.track:hover{transform:translateY(-6px)}
+
+/* FOOTER */
+footer{padding:30px 18px;text-align:center;opacity:.85}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(18px) scale(.995);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:920px){
+  .hero-inner{grid-template-columns:1fr;padding:0}
+  .about-grid{grid-template-columns:1fr}
+  .card{order:2}
+  .intro{order:1}
+}
+
+/* --- Mobile Optimierungen (<600px) --- */
+@media (max-width:600px){
+  body{background-attachment:scroll;}
+  .hero{padding:60px 16px 40px;}
+  .hero-inner{grid-template-columns:1fr;gap:20px;padding:0 12px;}
+  h1{font-size:32px;line-height:1.2;}
+  p.lead{font-size:15px;}
+  header{inset:8px 12px auto 12px;gap:12px;}
+  nav{padding:6px 10px;border-radius:10px;}
+  nav a{padding:6px 8px;font-size:14px;}
+  .card{padding:14px;width:100%;}
+  .about-grid{grid-template-columns:1fr;gap:20px;}
+  .gallery{grid-template-columns:1fr 1fr;gap:12px;}
+  .ig-embed{min-width:0;}
+  .btn{padding:10px 16px;font-size:14px;}
+  .tracks .track a{font-size:14px;}
+}
+
+.about-image {
+  width: 100%;
+  max-width: 500px;      /* Größe des Bildes anpassen */
+  margin: 40px auto 0;    /* zentriert und etwas Abstand nach oben */
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;    /* optional */
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .about-image {
+    max-width: 90%;  /* passt sich Bildschirmbreite an */
+  }
+}
+
