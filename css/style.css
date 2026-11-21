@@ -175,3 +175,10 @@ footer p{font-size:13px;color:var(--fog);}
   .contact-box{padding:36px;}
   section{padding:80px 0;}
 }
+.hero-name {
+    width: 100%;
+}
+
+.hero-name h1 {
+    text-align: right;
+}
